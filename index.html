@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <!--шрифты-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!--Файлы со стилями-->
+  <link rel="stylesheet" href="./css/notes.css">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/form.css">
+</head>
+
+<body>
+<!--Заголовок-->
+  <header class="header">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="" class="logo">
+          <img class="logo-img" src="./images/icons/📝Notes.png" alt="image">
+        </a>
+        <img class="logo-notes" src="./images/icons/notes.png" alt="image-notes">
+        <p>Всего заметок: <span id="notes-count">0</span></p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="wrapper-new-notes">
+        <form action="" name="note-form" onsubmit="return false">
+          <div class="wrapper-name-new-note">
+            <label for="note-title">Название заметки</label>
+            <input type="text" id="note-title" placeholder="Напишите название новой заметки..." required maxlength="50">
+          </div>
+          <div class="wrapper-description-color-new-note">
+            <div class="wrapper-description-new-note">
+              <label for="note-description">Описание новой заметки</label>
+              <textarea name="note-description" id="note-description" placeholder="Напишите описание новой заметки..." required></textarea>
+            </div>
+            <div class="wrapper-color-add-new-note">
+              <div class="wrapper-color-new-note">
+                <p>Выберите цвет заметки</p>
+                <ul class="colors">
+                  <li class="color-option-note">
+                    <div class="color-yellow"></div>
+                  </li>
+                  <li class="color-option-note">
+                    <div class="color-green"></div>
+                  </li>
+                  <li class="color-option-note selected">
+                    <div class="color-blue"></div>
+                  </li>
+                  <li class="color-option-note">
+                    <div class="color-red"></div>
+                  </li>
+                  <li class="color-option-note">
+                    <div class="color-purple"></div>
+                  </li>
+                </ul>
+              </div>
+              <button type="button" class="button-add-note" id="add-note-btn">
+                <img src="./images/icons/plus-svgrepo-com%201.png" alt="">
+                Добавить заметку
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <p>У вас нет еще ни одной заметки
+          Заполните поля выше и создайте свою первую заметку!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="container">
+        <div class="chosen-notes">
+        <label class="wrapper-chosen-notes">
+          <input type="checkbox" id="show-favorites">
+          <span>Показать только избранные заметки</span>
+        </label>
+      </div>
+      <div class="wrapper-notes-grid">
+        <!-- 1 заметка-->
+        <div class="note-card" data-id="1" data-color="blue">
+          <div class="note-header">
+            <div class="wrapper-note-header">
+              <h2>название заметки</h2>
+              <div class="wrapper-note-buttons">
+                <button type="button" class="like-note-button" aria-label="Добавить в избранное">
+                  <!-- здесь может быть иконка обычного или активного сердца -->
+                  <img src="./images/icons/heart%20active.png" alt="">
+                </button>
+                <button type="button" class="trash-note-button" aria-label="Удалить заметку">
+                  <img src="./images/icons/trash.png" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="note-text">
+            <div class="wrapper-note-text">
+              <p>текст заметки</p>
+            </div>
+          </div>
+        </div>
+        <!-- 2 заметка-->
+        <div class="note-card" data-id="2" data-color="yellow">
+          <div class="note-header">
+            <div class="wrapper-note-header">
+              <h2>название заметки</h2>
+              <div class="wrapper-note-buttons">
+                <button type="button" class="like-note-button" aria-label="Добавить в избранное">
+                  <!-- здесь может быть иконка обычного или активного сердца -->
+                  <img src="./images/icons/heart%20active.png" alt="">
+                </button>
+                <button type="button" class="trash-note-button" aria-label="Удалить заметку">
+                  <img src="./images/icons/trash.png" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="note-text">
+            <div class="wrapper-note-text">
+              <p>текст заметки</p>
+            </div>
+          </div>
+        </div>
+        <!-- 3 заметка-->
+        <div class="note-card" data-id="3" data-color="green">
+          <div class="note-header">
+            <div class="wrapper-note-header">
+              <h2>название заметки</h2>
+              <div class="wrapper-note-buttons">
+                <button type="button" class="like-note-button" aria-label="Добавить в избранное">
+                  <!-- здесь может быть иконка обычного или активного сердца -->
+                  <img src="./images/icons/heart%20active.png" alt="">
+                </button>
+                <button type="button" class="trash-note-button" aria-label="Удалить заметку">
+                  <img src="./images/icons/trash.png" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="note-text">
+            <div class="wrapper-note-text">
+              <p>текст заметки</p>
+            </div>
+          </div>
+        </div>
+        <!-- 4 заметка-->
+        <div class="note-card" data-id="4" data-color="red">
+          <div class="note-header">
+            <div class="wrapper-note-header">
+              <h2>название заметки</h2>
+              <div class="wrapper-note-buttons">
+                <button type="button" class="like-note-button" aria-label="Добавить в избранное">
+                  <!-- здесь может быть иконка обычного или активного сердца -->
+                  <img src="./images/icons/heart%20active.png" alt="">
+                </button>
+                <button type="button" class="trash-note-button" aria-label="Удалить заметку">
+                  <img src="./images/icons/trash.png" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="note-text">
+            <div class="wrapper-note-text">
+              <p>текст заметки</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ошибка заметки-->
+    <div class="error-note" id="error-message" role="alert">
+      <div class="wrapper-error-note">
+        <img src="./images/icons/warning.png" alt="">
+        <p>Максимальная длина заголовка - 50 символов</p>
+      </div>
+    </div>
+    <!-- добавление заметки-->
+    <div class="done-new-note" id="success-message" role="alert">
+      <div class="wrapper-done-new-note">
+        <img src="./images/icons/Done.png" alt="">
+        <p>Заметка добавлена!</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
