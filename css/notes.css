@@ -1,9 +1,10 @@
 
 .main-wrapper {
-  margin-top: 24px;
+  padding-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-height: 408px;
 }
 
 /* ЧЕКБОКС*/
@@ -28,4 +29,74 @@
 .wrapper-notes-grid {
   display: flex;
   flex-wrap: wrap; /*перенос на новую строку*/
+  gap: 24px;
+
+}
+.note-card {
+  border-radius: 10px;
+  width: 368px;
+  /*height: 216px; карточка не должна зависеть от высоты */
+  box-shadow: 0 4px 8px 0 rgba(11, 12, 13, 0.08), 0 8px 16px 0 rgba(11, 12, 13, 0.04), 0 1px 2px 0 rgba(11, 12, 13, 0.08);
+  background-color: #fff;
+  overflow: hidden; /* чтобы внутренности не вылезали за скругление */
+
+  /*ДЛЯ ТЕКСТА ВНУТРИ*/
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-note-header {
+  height: 48px;
+  padding: 12px ;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3db7d;
+
+}
+h2 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #292515;
+}
+.wrapper-note-buttons {
+  display: flex;
+  gap: 12px;
+}
+.wrapper-note-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 171%;
+  color: #000;
+  padding: 12px;
+}
+
+/* СООБЩЕНИЯ О ЗАМЕТКАХ */
+.error-note {
+  border-radius: 10px;
+  padding: 12px 24px;
+  width: 427px;
+  height: 48px;
+  box-shadow: 0 8px 12px 0 rgba(11, 12, 13, 0.08), 0 16px 24px 0 rgba(11, 12, 13, 0.04), 0 1px 2px 0 rgba(11, 12, 13, 0.08);
+  background: #f23d5b;
+
+  display: flex;
+  justify-content: space-between;
+}
+.message-about-new-note {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  color: #fff;
+}
+
+.done-new-note {
+  border-radius: 10px;
+  padding: 12px 24px;
+  width: 230px;
+  height: 48px;
+  box-shadow: 0 8px 12px 0 rgba(11, 12, 13, 0.08), 0 16px 24px 0 rgba(11, 12, 13, 0.04), 0 1px 2px 0 rgba(11, 12, 13, 0.08);
+  background: #47b27d;
+
+  display: flex;
+  justify-content: space-between;
 }

@@ -98,20 +98,18 @@
       <div class="wrapper-notes-grid">
         <!-- 1 заметка-->
         <div class="note-card" data-id="1" data-color="blue">
-          <div class="note-header">
             <div class="wrapper-note-header">
-              <h2>название заметки</h2>
+              <h2 >название заметки</h2>
               <div class="wrapper-note-buttons">
                 <button type="button" class="like-note-button" aria-label="Добавить в избранное">
                   <!-- здесь может быть иконка обычного или активного сердца -->
-                  <img src="./images/icons/heart%20active.png" alt="">
+                  <img src="./images/icons/heart%20inactive.png" alt="">
                 </button>
                 <button type="button" class="trash-note-button" aria-label="Удалить заметку">
                   <img src="./images/icons/trash.png" alt="">
                 </button>
               </div>
             </div>
-          </div>
           <div class="note-text">
             <div class="wrapper-note-text">
               <p>текст заметки</p>
@@ -126,7 +124,7 @@
               <div class="wrapper-note-buttons">
                 <button type="button" class="like-note-button" aria-label="Добавить в избранное">
                   <!-- здесь может быть иконка обычного или активного сердца -->
-                  <img src="./images/icons/heart%20active.png" alt="">
+                  <img src="./images/icons/heart%20inactive.png" alt="">
                 </button>
                 <button type="button" class="trash-note-button" aria-label="Удалить заметку">
                   <img src="./images/icons/trash.png" alt="">
@@ -136,7 +134,7 @@
           </div>
           <div class="note-text">
             <div class="wrapper-note-text">
-              <p>текст заметки</p>
+              <p>текст заметки чень большой, чтобы проверить правильность отступов и корректность работы карточки с текстом</p>
             </div>
           </div>
         </div>
@@ -148,7 +146,7 @@
               <div class="wrapper-note-buttons">
                 <button type="button" class="like-note-button" aria-label="Добавить в избранное">
                   <!-- здесь может быть иконка обычного или активного сердца -->
-                  <img src="./images/icons/heart%20active.png" alt="">
+                  <img class="active-heart" src="./images/icons/heart%20active.png" alt="">
                 </button>
                 <button type="button" class="trash-note-button" aria-label="Удалить заметку">
                   <img src="./images/icons/trash.png" alt="">
@@ -170,7 +168,7 @@
               <div class="wrapper-note-buttons">
                 <button type="button" class="like-note-button" aria-label="Добавить в избранное">
                   <!-- здесь может быть иконка обычного или активного сердца -->
-                  <img src="./images/icons/heart%20active.png" alt="">
+                  <img src="./images/icons/heart%20inactive.png" alt="">
                 </button>
                 <button type="button" class="trash-note-button" aria-label="Удалить заметку">
                   <img src="./images/icons/trash.png" alt="">
@@ -188,17 +186,13 @@
   </div>
   <!-- ошибка заметки-->
   <div class="error-note" id="error-message" role="alert">
-    <div class="wrapper-error-note">
       <img src="./images/icons/warning.png" alt="">
-      <p>Максимальная длина заголовка - 50 символов</p>
-    </div>
+      <p class="message-about-new-note">Максимальная длина заголовка - 50 символов</p>
   </div>
   <!-- добавление заметки-->
   <div class="done-new-note" id="success-message" role="alert">
-    <div class="wrapper-done-new-note">
       <img src="./images/icons/Done.png" alt="">
-      <p>Заметка добавлена!</p>
-    </div>
+      <p class="message-about-new-note">Заметка добавлена!</p>
     </div>
   </div>
 </section>
