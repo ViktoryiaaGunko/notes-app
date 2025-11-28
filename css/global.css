@@ -7,5 +7,63 @@
 html,
 body{
   font-family: 'Montserrat', sans-serif;
+  background-color: #FAFAFC;
 }
 
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #FFFFFF;
+  padding: 18px 0;
+  box-shadow:
+    0px 1px 3px 0px rgba(11,12,13,0.16),
+    0px 0px 1px 0px rgba(11,12,13,0.24);
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  max-width: 1182px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.right-part-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: right;
+  color: #000;
+}
+
+#notes-count {
+  font-weight: 700;
+}

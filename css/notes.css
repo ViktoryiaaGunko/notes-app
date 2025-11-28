@@ -1,24 +1,31 @@
-/*сброс стилей*/
-*{
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
+
+.main-wrapper {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-html,
-body{
-  font-family: 'Montserrat', sans-serif;
+/* ЧЕКБОКС*/
+/* квадрат чекбокса не жирный (  */
+.checkbox-wrap {
+  stroke-width: 2px;
+  stroke: #000;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 14px;
+  height: 14px;
+  background: #fff;
+}
+.black {
+  color: #000 !important;
+}
+.chosen-notes {
+  display: flex;
+  justify-content: flex-end;
 }
 
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-button {
-  border: none;
-  background-color: transparent;
+/* КАРТОЧКИ */
+.wrapper-notes-grid {
+  display: flex;
+  flex-wrap: wrap; /*перенос на новую строку*/
 }

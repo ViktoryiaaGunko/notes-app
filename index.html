@@ -19,34 +19,39 @@
 
 <body>
 <!--Заголовок-->
-  <header class="header">
-    <div class="container">
-      <div class="header-wrapper">
-        <a href="" class="logo">
-          <img class="logo-img" src="./images/icons/📝Notes.png" alt="image">
-        </a>
+<header class="header">
+  <div class="container">
+    <div class="header-wrapper">
+      <a href="" class="logo">
+        <img class="logo-img" src="./images/icons/📝Notes.png" alt="image">
+      </a>
+      <div class="right-part-header">
         <img class="logo-notes" src="./images/icons/notes.png" alt="image-notes">
         <p>Всего заметок: <span id="notes-count">0</span></p>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section>
-    <div class="container">
-      <div class="wrapper-new-notes">
-        <form action="" name="note-form" onsubmit="return false">
+<section>
+  <div class="container">
+    <div class="wrapper-form">
+      <form class action="" name="note-form" onsubmit="return false">
+        <div class="wrapper-form-new-notes">
+
           <div class="wrapper-name-new-note">
-            <label for="note-title">Название заметки</label>
-            <input type="text" id="note-title" placeholder="Напишите название новой заметки..." required maxlength="50">
+            <label class="name-label" for="note-title">Название заметки</label>
+            <input class="text-label" type="text" id="note-title" placeholder="Напишите название новой заметки..." required maxlength="50">
           </div>
+
           <div class="wrapper-description-color-new-note">
             <div class="wrapper-description-new-note">
-              <label for="note-description">Описание новой заметки</label>
-              <textarea name="note-description" id="note-description" placeholder="Напишите описание новой заметки..." required></textarea>
+              <label class="name-label" for="note-description">Описание новой заметки</label>
+              <textarea class="text-label big-field" name="note-description" id="note-description" placeholder="Напишите описание новой заметки..." required></textarea>
             </div>
             <div class="wrapper-color-add-new-note">
               <div class="wrapper-color-new-note">
-                <p>Выберите цвет заметки</p>
+                <p class="name-label">Выберите цвет заметки</p>
                 <ul class="colors">
                   <li class="color-option-note">
                     <div class="color-yellow"></div>
@@ -54,7 +59,7 @@
                   <li class="color-option-note">
                     <div class="color-green"></div>
                   </li>
-                  <li class="color-option-note selected">
+                  <li class="color-option-note selected-color">
                     <div class="color-blue"></div>
                   </li>
                   <li class="color-option-note">
@@ -67,25 +72,27 @@
               </div>
               <button type="button" class="button-add-note" id="add-note-btn">
                 <img src="./images/icons/plus-svgrepo-com%201.png" alt="">
-                Добавить заметку
+                <span class="button-add">Добавить заметку</span>
               </button>
             </div>
           </div>
-        </form>
-
-        <p>У вас нет еще ни одной заметки
-          Заполните поля выше и создайте свою первую заметку!
-        </p>
+        </div>
+      </form>
+      <div class="no-any-notes">
+        <p>У вас нет еще ни одной заметки</p>
+        <p>Заполните поля выше и создайте свою первую заметку!</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="main">
-    <div class="container">
-        <div class="chosen-notes">
+<section class="main">
+  <div class="container">
+    <div class="main-wrapper">
+      <div class="chosen-notes">
         <label class="wrapper-chosen-notes">
-          <input type="checkbox" id="show-favorites">
-          <span>Показать только избранные заметки</span>
+          <input class="checkbox-wrap selected-checkbox" type="checkbox" id="show-favorites">
+          <span class="name-label black">Показать только избранные заметки</span>
         </label>
       </div>
       <div class="wrapper-notes-grid">
@@ -178,22 +185,37 @@
           </div>
         </div>
       </div>
+  </div>
+  <!-- ошибка заметки-->
+  <div class="error-note" id="error-message" role="alert">
+    <div class="wrapper-error-note">
+      <img src="./images/icons/warning.png" alt="">
+      <p>Максимальная длина заголовка - 50 символов</p>
     </div>
-    <!-- ошибка заметки-->
-    <div class="error-note" id="error-message" role="alert">
-      <div class="wrapper-error-note">
-        <img src="./images/icons/warning.png" alt="">
-        <p>Максимальная длина заголовка - 50 символов</p>
-      </div>
+  </div>
+  <!-- добавление заметки-->
+  <div class="done-new-note" id="success-message" role="alert">
+    <div class="wrapper-done-new-note">
+      <img src="./images/icons/Done.png" alt="">
+      <p>Заметка добавлена!</p>
     </div>
-    <!-- добавление заметки-->
-    <div class="done-new-note" id="success-message" role="alert">
-      <div class="wrapper-done-new-note">
-        <img src="./images/icons/Done.png" alt="">
-        <p>Заметка добавлена!</p>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
+<section>
+  <div class="wrapper-delete-message">
+    <div class="wrap-header-delete-message">
+      <span>Удаление заметки</span>
+      <img src="./images/icons/cancel.png" alt="">
+    </div>
+    <div class="wrapper-bode-delete-message">
+      <p>Вы уверены что хотите удалить заметку <span>“название заметки”</span>?
+      </p>
+      <button type="button" id="undo-deletion-note">Отмена</button>
+      <button type="button" id="deletion-note">Удалить</button>
+    </div>
+  </div>
+</section>
 </body>
 </html>
