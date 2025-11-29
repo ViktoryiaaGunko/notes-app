@@ -78,10 +78,6 @@
           </div>
         </div>
       </form>
-      <div class="no-any-notes">
-        <p>У вас нет еще ни одной заметки</p>
-        <p>Заполните поля выше и создайте свою первую заметку!</p>
-      </div>
     </div>
   </div>
 </section>
@@ -89,13 +85,19 @@
 <section class="main">
   <div class="container">
     <div class="main-wrapper">
-      <div class="chosen-notes">
+
+      <div class="no-any-notes hidden"  id="empty-state">
+        <p>У вас нет еще ни одной заметки</p>
+        <p>Заполните поля выше и создайте свою первую заметку!</p>
+      </div>
+
+      <div class="chosen-notes " id="notes-controls">
         <label class="wrapper-chosen-notes">
           <input class="checkbox-wrap selected-checkbox" type="checkbox" id="show-favorites">
           <span class="name-label black">Показать только избранные заметки</span>
         </label>
       </div>
-      <div class="wrapper-notes-grid">
+      <div class="wrapper-notes-grid " id="notes-grid">
         <!-- 1 заметка-->
         <div class="note-card" data-id="1" data-color="blue">
             <div class="wrapper-note-header">
@@ -178,26 +180,28 @@
           </div>
           <div class="note-text">
             <div class="wrapper-note-text">
-              <p>текст заметки</p>
+              <p>текст заметки текст заметки текст заметки текст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкитекст заметкиddddddddddddddddddddddddddddddddddddddddddd</p>
             </div>
           </div>
         </div>
       </div>
-  </div>
-  <!-- ошибка заметки-->
-  <div class="error-note" id="error-message" role="alert">
-      <img src="./images/icons/warning.png" alt="">
-      <p class="message-about-new-note">Максимальная длина заголовка - 50 символов</p>
-  </div>
-  <!-- добавление заметки-->
-  <div class="done-new-note" id="success-message" role="alert">
-      <img src="./images/icons/Done.png" alt="">
-      <p class="message-about-new-note">Заметка добавлена!</p>
+
+      <!-- ошибка заметки-->
+      <div class="error-note hidden" id="error-message" role="alert">
+        <img src="./images/icons/warning.png" alt="">
+        <p class="message-about-new-note">Максимальная длина заголовка - 50 символов</p>
+      </div>
+      <!-- добавление заметки-->
+      <div class="done-new-note hidden" id="success-message" role="alert">
+        <img src="./images/icons/Done.png" alt="">
+        <p class="message-about-new-note">Заметка добавлена!</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section>
+<section class="hidden">
   <div class="wrapper-delete-message">
     <div class="wrap-header-delete-message">
       <span>Удаление заметки</span>

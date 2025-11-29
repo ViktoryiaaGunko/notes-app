@@ -1,7 +1,7 @@
 /* ФОРМА ДЛЯ НОВЫХ ЗАМЕТОК */
 .wrapper-form {
   padding-top: 24px;
-  min-height: 660px;
+  min-height: 252px;
 }
 .wrapper-form-new-notes {
   display: flex;

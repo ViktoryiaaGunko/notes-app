@@ -1,10 +1,12 @@
 
 .main-wrapper {
-  padding-top: 24px;
+  position: relative;   /* теперь внутри неё можно позиционировать детей */
+
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-height: 408px;
+  min-height: 408px;
 }
 
 /* ЧЕКБОКС*/
@@ -37,6 +39,7 @@
   width: 368px;
   /*height: 216px; карточка не должна зависеть от высоты */
   box-shadow: 0 4px 8px 0 rgba(11, 12, 13, 0.08), 0 8px 16px 0 rgba(11, 12, 13, 0.04), 0 1px 2px 0 rgba(11, 12, 13, 0.08);
+
   background-color: #fff;
   overflow: hidden; /* чтобы внутренности не вылезали за скругление */
 
@@ -68,35 +71,40 @@ h2 {
   line-height: 171%;
   color: #000;
   padding: 12px;
+  display: block;
+}
+.wrapper-note-text p {
+  overflow-wrap: break-word;   /* длинные слова переносятся */
 }
 
 /* СООБЩЕНИЯ О ЗАМЕТКАХ */
-.error-note {
+.error-note,
+.done-new-note {
+  position: absolute;   /* считаем bottom/right от .main */
+  bottom: 72px;         /* отступ от нижнего края секции main */
+  right: 64px;          /* отступ от правого края секции main */
+  z-index: 10;
+
+  height: 48px;
   border-radius: 10px;
   padding: 12px 24px;
-  width: 427px;
-  height: 48px;
   box-shadow: 0 8px 12px 0 rgba(11, 12, 13, 0.08), 0 16px 24px 0 rgba(11, 12, 13, 0.04), 0 1px 2px 0 rgba(11, 12, 13, 0.08);
-  background: #f23d5b;
 
   display: flex;
   justify-content: space-between;
+}
+.error-note {
+  width: 427px;
+  background: #f23d5b;
+}
+
+.done-new-note {
+  width: 230px;
+  background: #47b27d;
 }
 .message-about-new-note {
   font-weight: 500;
   font-size: 14px;
   line-height: 171%;
   color: #fff;
-}
-
-.done-new-note {
-  border-radius: 10px;
-  padding: 12px 24px;
-  width: 230px;
-  height: 48px;
-  box-shadow: 0 8px 12px 0 rgba(11, 12, 13, 0.08), 0 16px 24px 0 rgba(11, 12, 13, 0.04), 0 1px 2px 0 rgba(11, 12, 13, 0.08);
-  background: #47b27d;
-
-  display: flex;
-  justify-content: space-between;
 }
