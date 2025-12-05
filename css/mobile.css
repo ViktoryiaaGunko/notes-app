@@ -1,2 +1,37 @@
 @media (max-width: 375px) {
+  .wrapper-notes-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .note-card {
+    /*чтобы карточки подстраивались под мобильный контейнер и
+    не давали горизонтальный скролл*/
+    width: 100%;
+  }
+
+  /* для сообщений о добавлении заметок*/
+  .error-note,
+  .done-new-note {
+    left: 16px;
+    right: 16px;
+    width: auto;
+    bottom: 16px;
+
+    gap: 10px;
+    align-items: center;
+    padding: 10px 10px;
+  }
+  .mess-mobile {
+    font-size: 12px;
+    line-height: 150%;
+  }
+  .img-mess {
+    max-height: 24px;
+    max-width: 24px;
+  }
+
+  /*Контейнер и форма*/
+  /*Модальное окно удаления*/
+
 }

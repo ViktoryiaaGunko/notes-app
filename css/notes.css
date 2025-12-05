@@ -85,7 +85,7 @@ h2 {
   right: 64px;          /* отступ от правого края секции main */
   z-index: 10;
 
-  height: 48px;
+  min-height: 48px;
   border-radius: 10px;
   padding: 12px 24px;
   box-shadow: 0 8px 12px 0 rgba(11, 12, 13, 0.08), 0 16px 24px 0 rgba(11, 12, 13, 0.04), 0 1px 2px 0 rgba(11, 12, 13, 0.08);
