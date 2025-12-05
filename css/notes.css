@@ -108,3 +108,78 @@ h2 {
   line-height: 171%;
   color: #fff;
 }
+
+/*УДАЛЕНИЕ ЗАМЕТКИ*/
+.model-overlay {
+  /*на весь экран*/
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  background-color: rgb(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-delete-message {
+  padding: 20px 24px 36px 24px;
+  background-color: #ffffff;
+  opacity: 1;
+  border-radius: 10px;
+  width: 416px;
+  height: 233px;
+
+  display: flex;
+  flex-direction: column;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+}
+.wrap-header-delete-message {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #1f393d;
+}
+.dev-line {
+  margin: 0 -24px;
+}
+.wrapper-bode-delete-message {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 24px;
+
+  color: #1f393d;
+}
+.wrapper-bode-delete-message span{
+  font-weight: 700;
+}
+.buttons-model-overlay {
+  display: flex;
+  justify-content: space-between;
+}
+.undo-deletion {
+  font: inherit; /* наследие стилей текста*/
+
+  border-radius: 10px;
+  padding: 6px 24px;
+  width: 132px;
+  height: 36px;
+  background-color: #457cdc;
+  color: #fff;
+}
+.deletion {
+  font: inherit; /* наследие стилей текста*/
+
+  border-radius: 10px;
+  padding: 6px 24px;
+  width: 117px;
+  height: 36px;
+  color: #f23d5b;
+}
+

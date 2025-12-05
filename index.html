@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="./css/notes.css">
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/form.css">
+  <link rel="stylesheet" href="./css/mobile.css">
 </head>
 
 <body>
@@ -201,19 +202,23 @@
   </div>
 </section>
 
-<section class="hidden">
-  <div class="wrapper-delete-message">
-    <div class="wrap-header-delete-message">
-      <span>Удаление заметки</span>
-      <img src="./images/icons/cancel.png" alt="">
+<section class="model-overlay">
+    <div class="wrapper-delete-message">
+      <div class="wrap-header-delete-message">
+        <span>Удаление заметки</span>
+        <img src="./images/icons/cancel.png" alt="">
+      </div>
+        <img class="dev-line" src="./images/icons/devider.png" alt="">
+      <div class="wrapper-bode-delete-message">
+        <p>Вы уверены что хотите удалить заметку <span>“название заметки”</span>?
+        </p>
+        <div class="buttons-model-overlay">
+          <button type="button" class="undo-deletion" id="undo-deletion-note">Отменить</button>
+          <button type="button" class="deletion" id="deletion-note">Удалить</button>
+        </div></div>
     </div>
-    <div class="wrapper-bode-delete-message">
-      <p>Вы уверены что хотите удалить заметку <span>“название заметки”</span>?
-      </p>
-      <button type="button" id="undo-deletion-note">Отмена</button>
-      <button type="button" id="deletion-note">Удалить</button>
-    </div>
-  </div>
 </section>
+
+<sc></sc>
 </body>
 </html>
