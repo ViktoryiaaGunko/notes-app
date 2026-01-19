@@ -14,11 +14,11 @@
     0px 16px 24px 0px rgba(11, 12, 13, 0.04);
 
   padding: 24px;
-  max-height: 228px;
+  /*max-height: 228px;*/
 }
 
 .wrapper-name-new-note {
-  max-width: 344px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: column;
   min-height: 108px;
+  flex-grow: 1;
 }
 
 .name-label {
@@ -47,7 +48,8 @@
 }
 .big-field {
   height: 84px;
-  width: 848px;
+  width: 100%;
+  max-width: 100%;
 }
 input::placeholder,
 textarea::placeholder {

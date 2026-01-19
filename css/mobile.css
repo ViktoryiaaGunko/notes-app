@@ -1,50 +1,42 @@
-@media (max-width: 375px) {
-  .wrapper-notes-grid {
-    flex-direction: column;
-    gap: 16px;
+@media (max-width: 480px) {
+
+   section .wrapper-form-new-notes { /*для повышения приоритета 0,1,0 + 0,0,1 */
+    padding: 15px ;
+    max-height: none ;
+    height: auto ;
+    width: 100% ;
   }
 
-  .note-card {
-    /*чтобы карточки подстраивались под мобильный контейнер и
-    не давали горизонтальный скролл*/
-    width: 100%;
+  #note-description::placeholder,
+  #note-title::placeholder {
+    font-size: 11px !important;
   }
 
-  /* для сообщений о добавлении заметок*/
-  .error-note,
-  .done-new-note {
-    left: 16px;
-    right: 16px;
-    width: auto;
-    bottom: 16px;
 
-    gap: 10px;
-    align-items: center;
-    padding: 10px 10px;
+  section .wrapper-description-color-new-note {
+    display: flex ;
+    flex-direction: column ;
+    gap: 16px ;
   }
-  .mess-mobile {
-    font-size: 12px;
-    line-height: 150%;
-  }
-  .img-mess {
-    max-height: 24px;
-    max-width: 24px;
-  }
-
-  /*Контейнер и форма*/
-  .wrapper-form-new-notes {
-    gap: 16px;
-  }
-  .wrapper-description-color-new-note {
-    flex-direction: column;
-    gap: 16px;
-  }
+  .wrapper-description-new-note,
+  .wrapper-color-add-new-note,
+  .big-field,
   .button-add-note {
-    width: 100%; /* ширина по родителю */
-    justify-content: center;
+    width: 100% ;
+    max-width: 100% ;
+  }
+  .big-field {
+    height: 100px ;
   }
 
-  /*Модальное окно удаления*/
+  .button-add-note {
+    justify-content: center ;
+  }
 
-
+  .wrapper-notes-grid {
+    flex-direction: column ;
+  }
+  .note-card {
+    width: 100% ;
+  }
 }
