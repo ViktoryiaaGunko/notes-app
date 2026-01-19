@@ -32,6 +32,19 @@
   }
 
   /*Контейнер и форма*/
+  .wrapper-form-new-notes {
+    gap: 16px;
+  }
+  .wrapper-description-color-new-note {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .button-add-note {
+    width: 100%; /* ширина по родителю */
+    justify-content: center;
+  }
+
   /*Модальное окно удаления*/
+
 
 }
