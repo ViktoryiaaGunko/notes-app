@@ -1,0 +1,85 @@
+const colors = {
+    GREEN: 'green',
+    BLUE: 'blue',
+    RED: 'red',
+    YELLOW: 'yellow',
+    PURPLE: 'purple',
+};
+
+//массив с моковыми объектами
+const MOCK_NOTES = [
+    {
+        id: 1,
+        title: 'Изучение JS',
+        content: 'Начинаем изучать основы. Углубляемся.',
+        color: 'yellow',
+        isFavorite: true,
+    },
+    {
+        id: 2,
+        title: 'Изучение CSS, HTML',
+        content: 'Повторяем изученное.',
+        color: 'green',
+        isFavorite: false,
+    },
+    {
+        id: 3,
+        title: 'Изучение React',
+        content: 'После изучения JS переходим к React.',
+        color: 'blue',
+        isFavorite: false,
+    },
+];
+
+const model = {
+    notes: MOCK_NOTES,
+};
+// console.log(model.notes.length);
+
+const view = {
+    init() {
+        this.renderNotes(model.notes)
+    },
+
+    renderNotes(notes) {
+        const emptyState = document.getElementById('empty-state');
+        const gridState = document.getElementById('notes-grid');
+
+        if (!notes.length) {
+            emptyState.classList.remove('hidden');
+            gridState.classList.add('hidden');
+        } else {
+            emptyState.classList.add('hidden');
+            gridState.classList.remove('hidden');
+
+            //рендер карточек
+            const notesHTML = notes.map(note => {
+                return `<div class="note-card" data-id="${note.id}" data-color="${note.color}">
+                <div class="wrapper-note-header">
+                <h2 >${note.title}</h2>
+                <div class="wrapper-note-buttons">
+                  <button type="button" class="like-note-button" aria-label="Добавить в избранное">
+                  <!-- здесь может быть иконка обычного или активного сердца -->
+                    <img src="./images/icons/${heartIcon}" alt="">
+                  </button>
+                  <button type="button" class="trash-note-button" aria-label="Удалить заметку">
+                    <img src="./images/icons/trash.png" alt="">
+                  </button>
+                </div>
+              </div>
+            <div class="note-text">
+              <div class="wrapper-note-text">
+                <p>${note.content}</p>
+              </div>
+            </div>
+          </div>`;
+            }).join('');
+
+            gridState.innerHTML= notesHTML;
+
+        }
+    },
+};
+
+
+view.init();
