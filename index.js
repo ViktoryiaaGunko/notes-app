@@ -38,7 +38,8 @@ const model = {
 
 const view = {
     init() {
-        this.renderNotes(model.notes)
+        this.renderNotes(model.notes);
+        this.renderNotesCount(model.notes);
     },
 
     renderNotes(notes) {
@@ -76,8 +77,12 @@ const view = {
             }).join('');
 
             gridState.innerHTML= notesHTML;
-
         }
+    },
+
+    renderNotesCount(notes){
+        const notesCount = document.getElementById('notes-count');
+        notesCount.innerText=notes.length;
     },
 };
 
