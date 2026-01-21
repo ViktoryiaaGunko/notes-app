@@ -33,6 +33,7 @@ const MOCK_NOTES = [
 
 const model = {
     notes: MOCK_NOTES,
+
     // добавление новой заметки
     addNote(title, content, color) {
         const note = {
@@ -47,9 +48,14 @@ const model = {
         this.notes.unshift(note);
 
         // перерисовка страницы
+        this.updateNotes(note);
+    },
+
+    // перерисовка страницы с новой заметкой
+    updateNotes(){
         view.renderNotes(this.notes);
         view.renderNotesCount(this.notes);
-    },
+    }
 };
 // console.log(model.notes.length);
 
