@@ -62,7 +62,7 @@ const model = {
         this.updateNotes()
     },
 
-    toggleFavourite(noteId){
+    toggleFavorite(noteId){
         const note = this.notes.find(note => noteId===note.id)
         if(note){
             note.isFavorite=!note.isFavorite
@@ -70,11 +70,11 @@ const model = {
         this.updateNotes()
     },
 };
-// console.log(model.notes.length);
 
 const view = {
     init() {
         const form = document.querySelector('.note-form')
+
         form.addEventListener('submit', (event) => {
             // отмена перезагрузки страницы
             event.preventDefault()
@@ -87,6 +87,20 @@ const view = {
             // передаем данные в контроллер
             controller.addNote(title, content, color)
         })
+
+        const gridNotes = document.getElementById('notes-grid')
+
+        gridNotes.addEventListener('click', (event)=> {
+        const trashButton=event.target.closest('.trash-note-button')
+        if(trashButton){
+            const card = trashButton.closest('.note-card')
+            /* id в число */
+            const id = Number(card.dataset.id)
+            controller.deleteNote(id)
+        }
+        })
+
+
 
         this.renderNotes(model.notes);
         this.renderNotesCount(model.notes);
@@ -111,7 +125,7 @@ const view = {
                 <div class="wrapper-note-buttons">
                   <button type="button" class="like-note-button" aria-label="Добавить в избранное">
                   <!-- здесь может быть иконка обычного или активного сердца -->
-                    <img src="./images/icons/${heartIcon}" alt="">
+                    <img src="./images/icons/${heart-active}" alt="">
                   </button>
                   <button type="button" class="trash-note-button" aria-label="Удалить заметку">
                     <img src="./images/icons/trash.png" alt="">
@@ -171,6 +185,13 @@ const controller ={
 
         // вызываем метод view, реализацию которого вам нужно будет добавить
         view.renderMessage('success','Заметка добавлена')
-    }
+    },
 
+    deleteNote(noteId){
+        model.deleteNote(noteId)
+    },
+
+    toggleFavourite(noteId) {
+        model.toggleFavorite(noteId)
+    },
 };
