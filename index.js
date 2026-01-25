@@ -55,7 +55,14 @@ const model = {
     updateNotes(){
         view.renderNotes(this.notes);
         view.renderNotesCount(this.notes);
-    }
+    },
+
+    deleteNote(noteId){
+        this.notes=this.notes.filter(note => note.id!==noteId)
+        this.updateNotes()
+    },
+
+
 };
 // console.log(model.notes.length);
 

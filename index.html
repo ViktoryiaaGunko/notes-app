@@ -37,7 +37,7 @@
 <section>
   <div class="container">
     <div class="wrapper-form">
-      <form class action="" name="note-form" onsubmit="return false">
+      <form class action="" name="note-form" >
         <div class="wrapper-form-new-notes">
 
           <div class="wrapper-name-new-note">
@@ -55,7 +55,7 @@
                 <legend class="name-label">Выберите цвет заметки</legend>
                 <div class="colors">
                   <label class="color-option-note">
-                    <input type="radio" name="color" value="yellow" class="radio-input" aria-label="yellow">
+                    <input type="radio" name="color" value="yellow" class="radio-input" aria-label="yellow" checked>
                     <div class="color-yellow"></div>
                   </label>
                   <label class="color-option-note">
@@ -63,7 +63,7 @@
                     <div class="color-green"></div>
                   </label>
                   <label class="color-option-note selected-color">
-                    <input type="radio" name="color" value="blue" class="radio-input" aria-label="blue" checked>
+                    <input type="radio" name="color" value="blue" class="radio-input" aria-label="blue" >
                     <div class="color-blue"></div>
                   </label>
                   <label class="color-option-note">
@@ -76,7 +76,7 @@
                   </label>
                 </div>
               </fieldset>
-              <button type="button" class="button-add-note" id="add-note-btn">
+              <button type="submit" class="button-add-note" id="add-note-btn">
                 <img src="./images/icons/plus-svgrepo-com%201.png" alt="">
                 <span class="button-add">Добавить заметку</span>
               </button>
