@@ -33,6 +33,7 @@ const MOCK_NOTES = [
 
 const model = {
     notes: MOCK_NOTES,
+    isShowOnlyFavorite: false,
 
     // добавление новой заметки
     addNote(title, content, color) {
@@ -53,8 +54,9 @@ const model = {
 
     // перерисовка страницы с новой заметкой
     updateNotes(){
-        view.renderNotes(this.notes);
-        view.renderNotesCount(this.notes);
+        const notesToRender = this.isShowOnlyFavorite ? this.notes.filter( note => note.isFavorite) : this.notes;
+        view.renderNotes(notesToRender);
+        view.renderNotesCount(notesToRender);
     },
 
     deleteNote(noteId){
@@ -69,6 +71,11 @@ const model = {
         }
         this.updateNotes()
     },
+
+    toggleFilter(){
+        this.isShowOnlyFavorite=!this.isShowOnlyFavorite
+        this.updateNotes()
+    }
 };
 
 const view = {
@@ -89,18 +96,26 @@ const view = {
         })
 
         const gridNotes = document.getElementById('notes-grid')
-
-        gridNotes.addEventListener('click', (event)=> {
-        const trashButton=event.target.closest('.trash-note-button')
-        if(trashButton){
-            const card = trashButton.closest('.note-card')
-            /* id в число */
-            const id = Number(card.dataset.id)
-            controller.deleteNote(id)
-        }
+        gridNotes.addEventListener('click', (event) => {
+            const trashButton = event.target.closest('.trash-note-button')
+            if (trashButton) {
+                const card = trashButton.closest('.note-card')
+                /* id в число */
+                const id = Number(card.dataset.id)
+                controller.deleteNote(id)
+            }
+        })
+        gridNotes.addEventListener('click', (event)=>{
+            const likeButton = event.target.closest('.like-note-button')
+            if(likeButton){
+                const card =likeButton.closest('.note-card')
+                const id=Number(card.dataset.id)
+                controller.toggleFavorite(id)
+            }
         })
 
-
+        const showFavorite = document.querySelector('.selected-checkbox')
+        showFavorite.addEventListener('change', ()=> controller.toggleFilter())
 
         this.renderNotes(model.notes);
         this.renderNotesCount(model.notes);
@@ -166,9 +181,6 @@ const view = {
     }
 };
 
-
-view.init();
-
 const controller ={
     addNote(title, content, color){
         if(title.length > 50){
@@ -182,16 +194,22 @@ const controller ={
 
         // вызываем метод модели
         model.addNote(title, content, color)
-
         // вызываем метод view, реализацию которого вам нужно будет добавить
         view.renderMessage('success','Заметка добавлена')
     },
 
     deleteNote(noteId){
         model.deleteNote(noteId)
+        view.renderMessage('success','Заметка удалена')
     },
 
-    toggleFavourite(noteId) {
+    toggleFavorite(noteId) {
         model.toggleFavorite(noteId)
     },
+
+    toggleFilter(){
+        model.toggleFilter()
+    }
 };
+
+view.init();
