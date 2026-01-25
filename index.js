@@ -62,7 +62,13 @@ const model = {
         this.updateNotes()
     },
 
-
+    toggleFavourite(noteId){
+        const note = this.notes.find(note => noteId===note.id)
+        if(note){
+            note.isFavorite=!note.isFavorite
+        }
+        this.updateNotes()
+    },
 };
 // console.log(model.notes.length);
 
