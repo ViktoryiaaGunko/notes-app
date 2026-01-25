@@ -61,6 +61,20 @@ const model = {
 
 const view = {
     init() {
+        const form = document.querySelector('.note-form')
+        form.addEventListener('submit', (event) => {
+            // отмена перезагрузки страницы
+            event.preventDefault()
+
+            // получаем данные из полей формы
+            const title =form.elements['note-title'].value
+            const content = form.elements['note-description'].value
+            const color =form.elements['color'].value
+
+            // передаем данные в контроллер
+            controller.addNote(title, content, color)
+        })
+
         this.renderNotes(model.notes);
         this.renderNotesCount(model.notes);
     },
@@ -111,3 +125,23 @@ const view = {
 
 
 view.init();
+
+const controller ={
+    addNote(title, content, color){
+        if(title.length > 50){
+            alert('Заголовок слишком длинный.')
+            return
+        }
+        if(title.length===0 || content.length===0){
+            alert('Заполните поля.')
+            return
+        }
+
+        // вызываем метод модели
+        model.addNote(title, content, color)
+
+        // вызываем метод view, реализацию которого вам нужно будет добавить
+        view.showMessage('Заметка добавлена')
+    }
+
+};

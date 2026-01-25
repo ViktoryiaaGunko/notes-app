@@ -51,26 +51,31 @@
               <textarea class="text-label big-field" name="note-description" id="note-description" placeholder="Напишите описание новой заметки..." required></textarea>
             </div>
             <div class="wrapper-color-add-new-note">
-              <div class="wrapper-color-new-note">
-                <p class="name-label">Выберите цвет заметки</p>
-                <ul class="colors">
-                  <li class="color-option-note">
+              <fieldset class="wrapper-color-new-note">
+                <legend class="name-label">Выберите цвет заметки</legend>
+                <div class="colors">
+                  <label class="color-option-note">
+                    <input type="radio" name="color" value="yellow" class="radio-input">
                     <div class="color-yellow"></div>
-                  </li>
-                  <li class="color-option-note">
+                  </label>
+                  <label class="color-option-note">
+                    <input type="radio" name="color" value="green" class="radio-input">
                     <div class="color-green"></div>
-                  </li>
-                  <li class="color-option-note selected-color">
+                  </label>
+                  <label class="color-option-note selected-color">
+                    <input type="radio" name="color" value="blue" class="radio-input" checked>
                     <div class="color-blue"></div>
-                  </li>
-                  <li class="color-option-note">
+                  </label>
+                  <label class="color-option-note">
+                    <input type="radio" name="color" value="red" class="radio-input">
                     <div class="color-red"></div>
-                  </li>
-                  <li class="color-option-note">
+                  </label>
+                  <label class="color-option-note">
+                    <input type="radio" name="color" value="purple" class="radio-input">
                     <div class="color-purple"></div>
-                  </li>
-                </ul>
-              </div>
+                  </label>
+                </div>
+              </fieldset>
               <button type="button" class="button-add-note" id="add-note-btn">
                 <img src="./images/icons/plus-svgrepo-com%201.png" alt="">
                 <span class="button-add">Добавить заметку</span>

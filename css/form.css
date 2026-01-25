@@ -65,6 +65,14 @@ textarea::placeholder {
   flex-direction: column;
   gap: 12px;
 }
+.wrapper-color-new-note {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Расстояние между legend и кружочками */
+}
 .colors {
   display: flex;
   justify-content: space-between;
@@ -77,39 +85,38 @@ textarea::placeholder {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: border 0.2s ease;
 }
-.color-option-note.selected-color {
+/* checked element */
+.radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.color-option-note:has(.radio-input:checked){
   border: 1.5px solid #457cdc;
 }
-.color-yellow {
-  background-color: #f3db7d;
+.color-yellow, .color-green, .color-blue, .color-red, .color-purple{
   border-radius: 100%;
   height: 24px;
   width: 24px;
 }
+.color-yellow {
+  background-color: #f3db7d;
+}
 .color-green {
   background-color: #c2f37d;
-    border-radius: 100%;
-  height: 24px;
-  width: 24px;
 }
 .color-blue {
   background-color: #7de1f3;
-    border-radius: 100%;
-  height: 24px;
-  width: 24px;
 }
 .color-red {
   background-color: #f37d7d;
-    border-radius: 100%;
-  height: 24px;
-  width: 24px;
 }
 .color-purple {
   background-color: #e77df3;
-    border-radius: 100%;
-  height: 24px;
-  width: 24px;
 }
 
 /* КНОПКА ДЛЯ ДОБАВЛЕНИЯ ЗАМЕТОК */
