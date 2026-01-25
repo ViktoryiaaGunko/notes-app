@@ -121,6 +121,22 @@ const view = {
         const notesCount = document.getElementById('notes-count');
         notesCount.innerText=notes.length;
     },
+
+    renderMessage(type, message) {
+        let messageBlock;
+        if (type==='error'){
+            messageBlock=document.getElementById('error-message')
+        } else {
+            messageBlock= document.getElementById('success-message')
+        }
+        const textMessage = messageBlock.getElementsByClassName('message-about-new-note')
+        if (textMessage) textMessage.innerText= message
+
+        messageBlock.classList.remove('hidden')
+        setTimeout(()=>{
+            messageBlock.classList.add('hidden')
+        }, 3000)
+    }
 };
 
 
@@ -129,11 +145,11 @@ view.init();
 const controller ={
     addNote(title, content, color){
         if(title.length > 50){
-            alert('Заголовок слишком длинный.')
+            view.renderMessage('error', "Название слишком длинное.")
             return
         }
-        if(title.length===0 || content.length===0){
-            alert('Заполните поля.')
+        if(title.trim().length===0 || content.trim().length===0){
+            view.renderMessage('error', "Заполните поля.")
             return
         }
 
@@ -141,7 +157,7 @@ const controller ={
         model.addNote(title, content, color)
 
         // вызываем метод view, реализацию которого вам нужно будет добавить
-        view.showMessage('Заметка добавлена')
+        view.renderMessage('success','Заметка добавлена')
     }
 
 };
