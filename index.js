@@ -32,7 +32,7 @@ const MOCK_NOTES = [
 ];
 
 const model = {
-    notes: JSON.parse(localStorage.getItem('notes')) || MOCK_NOTES,
+    notes: JSON.parse(localStorage.getItem('notes')) || MOCK_NOTES, // массив данных (.parse)
     //notes: MOCK_NOTES,
     isShowOnlyFavorite: false,
 
@@ -77,6 +77,10 @@ const model = {
         this.isShowOnlyFavorite=!this.isShowOnlyFavorite
         this.updateNotes()
     },
+
+    save(){
+        localStorage.setItem('notes', JSON.stringify(this.notes))
+    }
 };
 
 const view = {
