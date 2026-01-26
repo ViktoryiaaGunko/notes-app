@@ -52,9 +52,12 @@
   padding: 12px ;
   display: flex;
   justify-content: space-between;
-  background-color: #f3db7d;
-
 }
+.note-card[data-color="green"] .wrapper-note-header { background-color: #c2f37d; }
+.note-card[data-color="blue"] .wrapper-note-header { background-color: #7de1f3; }
+.note-card[data-color="red"] .wrapper-note-header { background-color: #f37d7d; }
+.note-card[data-color="purple"] .wrapper-note-header { background-color: #e77df3; }
+
 h2 {
   font-weight: 500;
   font-size: 16px;

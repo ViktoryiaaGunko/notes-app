@@ -75,12 +75,12 @@ const model = {
     toggleFilter(){
         this.isShowOnlyFavorite=!this.isShowOnlyFavorite
         this.updateNotes()
-    }
+    },
 };
 
 const view = {
     init() {
-        const form = document.querySelector('.note-form')
+        const form = document.querySelector('[name="note-form"]')
 
         form.addEventListener('submit', (event) => {
             // отмена перезагрузки страницы
@@ -93,6 +93,9 @@ const view = {
 
             // передаем данные в контроллер
             controller.addNote(title, content, color)
+
+            // очистка формы
+            form.reset()
         })
 
         const gridNotes = document.getElementById('notes-grid')
@@ -140,7 +143,7 @@ const view = {
                 <div class="wrapper-note-buttons">
                   <button type="button" class="like-note-button" aria-label="Добавить в избранное">
                   <!-- здесь может быть иконка обычного или активного сердца -->
-                    <img src="./images/icons/${heart-active}" alt="">
+                    <img src="./images/icons/${note.isFavorite ? 'heart-active.png' : 'heart-inactive.png'}" alt="">
                   </button>
                   <button type="button" class="trash-note-button" aria-label="Удалить заметку">
                     <img src="./images/icons/trash.png" alt="">
@@ -171,7 +174,7 @@ const view = {
         } else {
             messageBlock= document.getElementById('success-message')
         }
-        const textMessage = messageBlock.getElementsByClassName('message-about-new-note')
+        const textMessage = messageBlock.querySelector('.message-about-new-note')
         if (textMessage) textMessage.innerText= message
 
         messageBlock.classList.remove('hidden')
