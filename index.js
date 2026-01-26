@@ -32,7 +32,8 @@ const MOCK_NOTES = [
 ];
 
 const model = {
-    notes: MOCK_NOTES,
+    notes: JSON.parse(localStorage.getItem('notes')) || MOCK_NOTES,
+    //notes: MOCK_NOTES,
     isShowOnlyFavorite: false,
 
     // добавление новой заметки
