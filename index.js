@@ -44,13 +44,14 @@ const model = {
             content: content,
             color: color,
             isFavorite: false,
-        };
+        }
 
         // новая заметка в начало списка
-        this.notes.unshift(note);
+        this.notes.unshift(note)
 
+        this.save()
         // перерисовка страницы
-        this.updateNotes(note);
+        this.updateNotes(note)
     },
 
     // перерисовка страницы с новой заметкой
@@ -62,6 +63,8 @@ const model = {
 
     deleteNote(noteId){
         this.notes=this.notes.filter(note => note.id!==noteId)
+
+        this.save()
         this.updateNotes()
     },
 
@@ -70,6 +73,7 @@ const model = {
         if(note){
             note.isFavorite=!note.isFavorite
         }
+        this.save()
         this.updateNotes()
     },
 
