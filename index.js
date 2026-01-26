@@ -49,6 +49,12 @@ const model = {
         // новая заметка в начало списка
         this.notes.unshift(note)
 
+        // сброс фильтра при новой заметке
+        this.isShowOnlyFavorite = false
+        // сброс галочки при новой заметке
+        const favCheck = document.querySelector('.selected-checkbox')
+        if(favCheck) favCheck.checked=false
+
         this.save()
         // перерисовка страницы
         this.updateNotes(note)
@@ -64,6 +70,15 @@ const model = {
     deleteNote(noteId){
         this.notes=this.notes.filter(note => note.id!==noteId)
 
+        const hasFav = this.notes.some(note => note.isFavorite)
+        // если нет ни одной избранной заметки и нажата кнопка показа только избранных
+        if(!hasFav && this.isShowOnlyFavorite){
+            // сброс фильтра при новой заметке
+            this.isShowOnlyFavorite = false
+            // сброс галочки при новой заметке
+            const favCheck = document.querySelector('.selected-checkbox')
+            if(favCheck) favCheck.checked=false
+        }
         this.save()
         this.updateNotes()
     },
@@ -134,15 +149,18 @@ const view = {
     },
 
     renderNotes(notes) {
-        const emptyState = document.getElementById('empty-state');
-        const gridState = document.getElementById('notes-grid');
+        const emptyState = document.getElementById('empty-state')
+        const gridState = document.getElementById('notes-grid')
+        const messShowFav = document.getElementById('notes-controls')
 
-        if (!notes.length) {
-            emptyState.classList.remove('hidden');
-            gridState.classList.add('hidden');
+        if (!model.notes.length) {
+            emptyState.classList.remove('hidden')
+            gridState.classList.add('hidden')
+            messShowFav.classList.add('hidden')
         } else {
-            emptyState.classList.add('hidden');
-            gridState.classList.remove('hidden');
+            emptyState.classList.add('hidden')
+            gridState.classList.remove('hidden')
+            messShowFav.classList.remove('hidden')
 
             //рендер карточек
             const notesHTML = notes.map(note => {
