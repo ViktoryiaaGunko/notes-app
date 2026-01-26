@@ -64,7 +64,8 @@ const model = {
     updateNotes(){
         const notesToRender = this.isShowOnlyFavorite ? this.notes.filter( note => note.isFavorite) : this.notes;
         view.renderNotes(notesToRender);
-        view.renderNotesCount(notesToRender);
+        // счетчик для всех заметок не только для избранных
+        view.renderNotesCount(this.notes);
     },
 
     deleteNote(noteId){
